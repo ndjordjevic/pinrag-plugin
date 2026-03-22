@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "pinrag": {
+      "command": "uvx",
+      "args": ["--from", "pinrag", "pinrag-mcp"],
+      "env": {
+        "ANTHROPIC_API_KEY": "",
+        "OPENAI_API_KEY": ""
+      }
+    }
+  }
+}

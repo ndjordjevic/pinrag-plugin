@@ -1,0 +1,11 @@
+{
+  "name": "pinrag",
+  "description": "RAG for your editor: index PDFs, YouTube, GitHub repos, Discord exports. Query with citations.",
+  "version": "1.0.0",
+  "author": { "name": "ndjordjevic" },
+  "homepage": "https://github.com/ndjordjevic/pinrag",
+  "repository": "https://github.com/ndjordjevic/pinrag-plugin",
+  "license": "MIT",
+  "keywords": ["rag", "mcp", "pdf", "citations", "langchain", "chromadb"],
+  "logo": "assets/pinrag-icon.svg"
+}
