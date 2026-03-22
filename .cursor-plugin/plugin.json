@@ -6,6 +6,7 @@
   "homepage": "https://github.com/ndjordjevic/pinrag",
   "repository": "https://github.com/ndjordjevic/pinrag-plugin",
   "license": "MIT",
-  "keywords": ["rag", "mcp", "pdf", "citations", "langchain", "chromadb"],
-  "logo": "assets/pinrag-icon.svg"
+  "keywords": ["rag", "mcp", "pdf", "citations", "langchain", "chromadb", "youtube", "github"],
+  "logo": "assets/pinrag-icon.svg",
+  "skills": "skills/"
 }
