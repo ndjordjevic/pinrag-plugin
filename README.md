@@ -25,7 +25,9 @@ The MCP server itself is published as the **`pinrag`** package on PyPI (`pinrag-
 
 ## Goose (block/agent-skills)
 
-To list this skill in the Goose Skills Marketplace, open a PR against [block/agent-skills](https://github.com/block/agent-skills) that adds the **`pinrag/`** folder from this repo (see [CONTRIBUTING.md](https://github.com/block/agent-skills/blob/main/CONTRIBUTING.md)). The subtree is kept in sync here under [`pinrag/SKILL.md`](pinrag/SKILL.md).
+The **`pinrag/`** subtree matches [block/agent-skills](https://github.com/block/agent-skills) layout; open a PR with that folder per [CONTRIBUTING.md](https://github.com/block/agent-skills/blob/main/CONTRIBUTING.md).
+
+**Submitted:** [block/agent-skills#18](https://github.com/block/agent-skills/pull/18) (pending maintainer review).
 
 ## License
 
