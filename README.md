@@ -1,7 +1,7 @@
 # PinRAG plugin (Cursor, Claude Code, VS Code Copilot, Amp, Goose)
 
-A **plugin bundle** for editors that support the Open Plugins / Agent Skills
-model: ships the [PinRAG](https://github.com/ndjordjevic/pinrag) MCP server
+A **plugin bundle** for your **editor or CLI** where the host supports Open Plugins / Agent Skills.
+It ships the [PinRAG](https://github.com/ndjordjevic/pinrag) MCP server
 configuration plus a `use-pinrag` skill that teaches the agent how to call
 PinRAG's tools.
 

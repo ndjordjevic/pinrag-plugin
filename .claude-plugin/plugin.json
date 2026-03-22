@@ -1,6 +1,6 @@
 {
   "name": "pinrag",
-  "description": "RAG for your editor: index PDFs, YouTube, GitHub repos, Discord exports. Query with citations.",
+  "description": "RAG for your editor or CLI: index PDFs, YouTube, GitHub repos, Discord exports. Query with citations.",
   "version": "1.0.0",
   "author": { "name": "ndjordjevic" },
   "homepage": "https://github.com/ndjordjevic/pinrag",
