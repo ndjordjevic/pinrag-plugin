@@ -26,10 +26,10 @@ MCP configuration via `uvx --from pinrag pinrag-mcp` (or from PATH after
 
 ## Prerequisites
 
-- **API keys:** Set `ANTHROPIC_API_KEY` and/or `OPENAI_API_KEY` in the MCP
-  `env` block. Default setup: Anthropic LLM + OpenAI embeddings (both keys
-  required). OpenAI-only: set `PINRAG_LLM_PROVIDER=openai` and only
-  `OPENAI_API_KEY`. See the [PinRAG README](https://github.com/ndjordjevic/pinrag#installation).
+- **API keys:** Set `OPENAI_API_KEY` in the MCP `env` block (default: OpenAI
+  embeddings and chat). For Anthropic as the query LLM, set
+  `PINRAG_LLM_PROVIDER=anthropic` and `ANTHROPIC_API_KEY`. See the
+  [PinRAG README](https://github.com/ndjordjevic/pinrag#quick-start).
 - **uv:** Required when using `uvx`. Install from [docs.astral.sh/uv](https://docs.astral.sh/uv/).
 - **Stable index path:** Set `PINRAG_PERSIST_DIR` to an absolute path (e.g.
   `~/.pinrag/chroma_db`) so the vector store is not tied to the editor's

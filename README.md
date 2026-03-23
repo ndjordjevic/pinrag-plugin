@@ -24,10 +24,10 @@ only manifests, skill files, and a Goose-ready subtree.
 ## Prerequisites
 
 - **[uv](https://docs.astral.sh/uv/)** on your PATH (used by `uvx` to run `pinrag-mcp`).
-- **API keys:** After install, set `ANTHROPIC_API_KEY` and/or `OPENAI_API_KEY`
-  in the MCP `env` block.
-  - Default: Anthropic LLM + OpenAI embeddings → set both keys.
-  - OpenAI only: set `PINRAG_LLM_PROVIDER=openai` and only `OPENAI_API_KEY`.
+- **API keys:** After install, set `OPENAI_API_KEY` in the MCP `env` block
+  (default: OpenAI embeddings and OpenAI chat). For Anthropic as the query
+  LLM, set `PINRAG_LLM_PROVIDER=anthropic` and `ANTHROPIC_API_KEY` — see the
+  [PinRAG README](https://github.com/ndjordjevic/pinrag#quick-start).
 - **Stable index:** Set `PINRAG_PERSIST_DIR` to an absolute path (e.g.
   `~/.pinrag/chroma_db`) so indexes are not tied to the editor's working
   directory.
