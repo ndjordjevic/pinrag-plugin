@@ -2,7 +2,7 @@
   "mcpServers": {
     "pinrag": {
       "command": "uvx",
-      "args": ["pinrag"],
+      "args": ["--refresh", "pinrag"],
       "env": {
         "OPENAI_API_KEY": "",
         "PINRAG_PERSIST_DIR": ""

@@ -9,7 +9,7 @@ The Python package (`pinrag` on PyPI) lives in [ndjordjevic/pinrag](https://gith
 | Path | Purpose |
 |------|---------|
 | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Plugin manifest ([schema](https://code.claude.com/docs/en/plugins-reference.md#plugin-manifest-schema)) |
-| [`.mcp.json`](.mcp.json) | MCP server: `uvx pinrag` |
+| [`.mcp.json`](.mcp.json) | MCP server: `uvx --refresh pinrag` |
 | [`skills/use-pinrag/SKILL.md`](skills/use-pinrag/SKILL.md) | Agent skill — maps user requests to PinRAG MCP tools |
 | [`assets/pinrag-icon.svg`](assets/pinrag-icon.svg) | Icon for marketplace / docs |
 | [`LICENSE`](LICENSE) | MIT (matches `plugin.json` `license`) |

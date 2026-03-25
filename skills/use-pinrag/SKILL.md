@@ -10,7 +10,7 @@ description: >-
 
 Use this skill whenever the **PinRAG** MCP server is running. The server
 process runs the `pinrag` CLI; it is launched automatically from your editor's
-MCP configuration via `uvx pinrag` (or from PATH after
+MCP configuration via `uvx --refresh pinrag` (or from PATH after
 `pipx install pinrag` / `uv tool install pinrag`).
 
 ## Prerequisites
