@@ -1,79 +1,51 @@
-# PinRAG plugin (Cursor, Claude Code, VS Code Copilot, Amp, Goose)
+# PinRAG — Claude Code plugin
 
-A **plugin bundle** for your **editor or CLI** where the host supports Open Plugins / Agent Skills.
-It ships the [PinRAG](https://github.com/ndjordjevic/pinrag) MCP server
-configuration plus a `use-pinrag` skill that teaches the agent how to call
-PinRAG's tools.
+A [Claude Code](https://code.claude.com/docs/en/plugins.md) plugin for [PinRAG](https://github.com/ndjordjevic/pinrag): local RAG over PDFs, YouTube, GitHub repos, and Discord exports, with citations.
 
-The Python package (`pinrag` on PyPI) lives in
-[ndjordjevic/pinrag](https://github.com/ndjordjevic/pinrag). This repo adds
-only manifests, skill files, and a Goose-ready subtree.
+The Python package (`pinrag` on PyPI) lives in [ndjordjevic/pinrag](https://github.com/ndjordjevic/pinrag). This repo ships only the Claude Code plugin layout: manifest (`.claude-plugin/plugin.json`), bundled MCP (`.mcp.json`), and the `use-pinrag` skill.
 
 ## Contents
 
 | Path | Purpose |
 |------|---------|
-| [`.cursor-plugin/plugin.json`](.cursor-plugin/plugin.json) | Cursor + VS Code Copilot manifest |
-| [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Claude Code manifest |
+| [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Plugin manifest ([schema](https://code.claude.com/docs/en/plugins-reference.md#plugin-manifest-schema)) |
 | [`.mcp.json`](.mcp.json) | MCP server: `uvx --from pinrag pinrag-mcp` |
-| [`skills/use-pinrag/SKILL.md`](skills/use-pinrag/SKILL.md) | Agent skill (Cursor, Claude Code, VS Code Copilot) |
-| [`skills/use-pinrag/mcp.json`](skills/use-pinrag/mcp.json) | Amp-compatible MCP config (co-located with the skill) |
-| [`pinrag/SKILL.md`](pinrag/SKILL.md) | Skill copy for [block/agent-skills](https://github.com/block/agent-skills) (Goose marketplace) |
-| [`assets/pinrag-icon.svg`](assets/pinrag-icon.svg) | Plugin logo |
+| [`skills/use-pinrag/SKILL.md`](skills/use-pinrag/SKILL.md) | Agent skill — maps user requests to PinRAG MCP tools |
+| [`assets/pinrag-icon.svg`](assets/pinrag-icon.svg) | Icon for marketplace / docs |
+| [`LICENSE`](LICENSE) | MIT (matches `plugin.json` `license`) |
 
 ## Prerequisites
 
 - **[uv](https://docs.astral.sh/uv/)** on your PATH (used by `uvx` to run `pinrag-mcp`).
-- **API keys:** After install, set `OPENAI_API_KEY` in the MCP `env` block
-  (default: OpenAI embeddings and OpenAI chat). For Anthropic as the query
-  LLM, set `PINRAG_LLM_PROVIDER=anthropic` and `ANTHROPIC_API_KEY` — see the
-  [PinRAG README](https://github.com/ndjordjevic/pinrag#quick-start).
-- **Stable index:** Set `PINRAG_PERSIST_DIR` to an absolute path (e.g.
-  `~/.pinrag/chroma_db`) so indexes are not tied to the editor's working
-  directory.
+- **API keys:** Set `OPENAI_API_KEY` in the MCP `env` block (default: OpenAI embeddings and chat). For Anthropic as the query LLM, set `PINRAG_LLM_PROVIDER=anthropic` and `ANTHROPIC_API_KEY` — see the [PinRAG README](https://github.com/ndjordjevic/pinrag#quick-start).
+- **Stable index:** Set `PINRAG_PERSIST_DIR` to an absolute path (e.g. `~/.pinrag/chroma_db`) so the vector store is not tied to the working directory.
 
-## Editor install
+## Install in Claude Code
 
-### Cursor
-
-Submit or browse this plugin on [Cursor Directory](https://cursor.directory).
-For manual install, point Cursor Directory's Auto-scan at this repo URL; it
-picks up `.cursor-plugin/plugin.json`, `.mcp.json`, and `skills/`.
-
-### Claude Code
+### From a local clone (development)
 
 ```bash
-claude --plugin-dir ./pinrag-plugin
+git clone https://github.com/ndjordjevic/pinrag-plugin.git
+cd pinrag-plugin
+claude --plugin-dir .
 ```
 
-Or install via a marketplace that references this repo.
+After changes, run `/reload-plugins` in Claude Code to pick up updates.
 
-### VS Code Copilot (agent plugins preview)
+### From the official marketplace
 
-*Chat: Install Plugin From Source* → enter this repo URL, or add it via the
-agent plugins marketplace per the
-[VS Code agent plugins docs](https://code.visualstudio.com/docs/copilot/customization/agent-plugins).
+Submit or list plugins via:
 
-### Amp
+- [claude.ai/settings/plugins/submit](https://claude.ai/settings/plugins/submit)
+- [platform.claude.com/plugins/submit](https://platform.claude.com/plugins/submit)
 
-```bash
-amp skill add ndjordjevic/pinrag-plugin/skills/use-pinrag
-```
+See [Create plugins](https://code.claude.com/docs/en/plugins.md) and [Discover and install plugins](https://code.claude.com/docs/en/discover-plugins.md).
 
-The `skills/use-pinrag/mcp.json` at the skill root is picked up automatically.
+## Usage
 
-## Goose (block/agent-skills)
-
-The `pinrag/` subtree matches the
-[block/agent-skills](https://github.com/block/agent-skills) layout.
-
-**Submitted:** [block/agent-skills#18](https://github.com/block/agent-skills/pull/18)
-(pending maintainer review).
-
-To submit manually: fork block/agent-skills, copy the `pinrag/` directory to
-the fork root (alongside `code-review/`, etc.), and open a PR using the
-"Submit a Skill" template.
+- With the plugin enabled, the MCP server starts from `.mcp.json` and the skill is available as **`/pinrag:use-pinrag`** (namespace matches the `name` field in `plugin.json`).
+- Invoke `/help` to confirm the skill appears under the plugin namespace.
 
 ## License
 
-MIT — same as [PinRAG](https://github.com/ndjordjevic/pinrag/blob/main/LICENSE).
+MIT — see [LICENSE](LICENSE); aligns with [PinRAG](https://github.com/ndjordjevic/pinrag/blob/main/LICENSE).

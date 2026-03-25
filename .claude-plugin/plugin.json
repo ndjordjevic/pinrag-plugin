@@ -7,6 +7,5 @@
   "repository": "https://github.com/ndjordjevic/pinrag-plugin",
   "license": "MIT",
   "keywords": ["rag", "mcp", "pdf", "citations", "langchain", "chromadb", "youtube", "github"],
-  "logo": "assets/pinrag-icon.svg",
-  "skills": "skills/"
+  "skills": "./skills/"
 }
