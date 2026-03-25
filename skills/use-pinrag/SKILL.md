@@ -9,8 +9,8 @@ description: >-
 # PinRAG MCP tools
 
 Use this skill whenever the **PinRAG** MCP server is running. The server
-process is named `pinrag-mcp`; it is launched automatically from your editor's
-MCP configuration via `uvx --from pinrag pinrag-mcp` (or from PATH after
+process runs the `pinrag` CLI; it is launched automatically from your editor's
+MCP configuration via `uvx pinrag` (or from PATH after
 `pipx install pinrag` / `uv tool install pinrag`).
 
 ## Prerequisites

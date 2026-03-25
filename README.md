@@ -9,14 +9,14 @@ The Python package (`pinrag` on PyPI) lives in [ndjordjevic/pinrag](https://gith
 | Path | Purpose |
 |------|---------|
 | [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json) | Plugin manifest ([schema](https://code.claude.com/docs/en/plugins-reference.md#plugin-manifest-schema)) |
-| [`.mcp.json`](.mcp.json) | MCP server: `uvx --from pinrag pinrag-mcp` |
+| [`.mcp.json`](.mcp.json) | MCP server: `uvx pinrag` |
 | [`skills/use-pinrag/SKILL.md`](skills/use-pinrag/SKILL.md) | Agent skill — maps user requests to PinRAG MCP tools |
 | [`assets/pinrag-icon.svg`](assets/pinrag-icon.svg) | Icon for marketplace / docs |
 | [`LICENSE`](LICENSE) | MIT (matches `plugin.json` `license`) |
 
 ## Prerequisites
 
-- **[uv](https://docs.astral.sh/uv/)** on your PATH (used by `uvx` to run `pinrag-mcp`).
+- **[uv](https://docs.astral.sh/uv/)** on your PATH (used by `uvx` to run `pinrag`).
 - **API keys:** Set `OPENAI_API_KEY` in the MCP `env` block (default: OpenAI embeddings and chat). For Anthropic as the query LLM, set `PINRAG_LLM_PROVIDER=anthropic` and `ANTHROPIC_API_KEY` — see the [PinRAG README](https://github.com/ndjordjevic/pinrag#quick-start).
 - **Stable index:** Set `PINRAG_PERSIST_DIR` to an absolute path (e.g. `~/.pinrag/chroma_db`) so the vector store is not tied to the working directory.
 
